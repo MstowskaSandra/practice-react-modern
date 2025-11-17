@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ClockDate = props => {
+function ClockDate(props) {
+    const { date } = props;
+
     function getCorrectMonthFormat(monthNumber) {
         return (monthNumber + 1).toString().padStart(2, '0');
     }
@@ -9,7 +11,6 @@ const ClockDate = props => {
         return day.toString().padStart(2, '0');
     }
 
-    const { date } = props;
     const year = date.getFullYear();
     const month = getCorrectMonthFormat(date.getMonth());
     const day = getCorrectDayFormat(date.getDate());
@@ -19,6 +20,10 @@ const ClockDate = props => {
             {year}:{month}:{day}
         </section>
     );
+}
+
+ClockDate.propTypes = {
+    date: PropTypes.instanceOf(Date).isRequired,
 };
 
 export default ClockDate;

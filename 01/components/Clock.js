@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 import ClockTime from './ClockTime';
 import ClockDate from './ClockDate';
 
-const Clock = props => {
-    return (
-        <>
-            <ClockTime date={props.date} />
-            <ClockDate date={props.date} />
-        </>
-    );
+const Clock = ({ date }) => {
+    <>
+        <ClockTime date={date} />
+        <ClockDate date={date} />
+    </>;
 };
 
 Clock.propTypes = {

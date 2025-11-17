@@ -1,3 +1,4 @@
+const ESLintPlugin = require('eslint-webpack-plugin');
 const taskNumber = "01";
 // numer przerabianego zadania
 
@@ -37,7 +38,8 @@ module.exports = {
       // wskazuje plik źródłowy
       filename: "index.html"
       // określan nazwę dla pliku
-    })
+    }),
+    new ESLintPlugin()
   ]
 };
 // eksportuję ustawienia dla webpack-a
